@@ -11,16 +11,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   header('Content-Type: application/json; charset=utf-8');
 
   if ($nom === '' || $prenom === '' || $ville === '' || $sexe === '') {
-    echo json_encode(["success" => false, "message" => "Champs manquants"]);
+    echo json_encode(["success" => false, "message" => "Champs must be "]);
     exit;
   }
 
   $es = new EtudiantService();
   $es->create(new Etudiant(null, $nom, $prenom, $ville, $sexe));
 
-  echo json_encode(["success" => true, "message" => "Etudiant inséré"]);
+  echo json_encode(["success" => true, "message" => "Etudiant added"]);
   exit;
 }
 
 http_response_code(405);
-echo "Method Not Allowed";
+echo "Method disallowed";
