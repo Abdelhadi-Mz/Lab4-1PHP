@@ -52,7 +52,7 @@ class EtudiantService implements IDao {
     }
     return $etds;
   }
-
+//test
   public function findById($id) {
     $sql = "SELECT * FROM Etudiant WHERE id = :id";
     $stmt = $this->connexion->getConnexion()->prepare($sql);
@@ -64,7 +64,8 @@ class EtudiantService implements IDao {
     return new Etudiant($e->id, $e->nom, $e->prenom, $e->ville, $e->sexe);
   }
 
-  // Pour API JSON
+
+  
   public function findAllApi() {
     $sql = "SELECT * FROM Etudiant ORDER BY id DESC";
     $stmt = $this->connexion->getConnexion()->prepare($sql);
