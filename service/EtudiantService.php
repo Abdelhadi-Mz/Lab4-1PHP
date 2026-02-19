@@ -9,7 +9,7 @@ class EtudiantService implements IDao {
   public function __construct() {
     $this->connexion = new Connexion();
   }
-
+//this a test
   public function create($o) {
     $sql = "INSERT INTO Etudiant(nom, prenom, ville, sexe) VALUES (:nom, :prenom, :ville, :sexe)";
     $stmt = $this->connexion->getConnexion()->prepare($sql);
@@ -20,7 +20,7 @@ class EtudiantService implements IDao {
       ':sexe' => $o->getSexe()
     ]);
   }
-
+//no plag
   public function delete($o) {
     $sql = "DELETE FROM Etudiant WHERE id = :id";
     $stmt = $this->connexion->getConnexion()->prepare($sql);
@@ -40,7 +40,7 @@ class EtudiantService implements IDao {
       ':id' => $o->getId()
     ]);
   }
-
+//finall 
   public function findAll() {
     $etds = [];
     $sql = "SELECT * FROM Etudiant ORDER BY id DESC";
@@ -65,7 +65,7 @@ class EtudiantService implements IDao {
   }
 
 
-  
+  //hello
   public function findAllApi() {
     $sql = "SELECT * FROM Etudiant ORDER BY id DESC";
     $stmt = $this->connexion->getConnexion()->prepare($sql);
