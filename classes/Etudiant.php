@@ -27,6 +27,6 @@ class Etudiant {
   public function setSexe($sexe){ $this->sexe = $sexe; }
 
   public function __toString() {
-    return $this->nom . " " . $this->prenom;
+    return $this->nom . "  " . $this->prenom;
   }
 }
